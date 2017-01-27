@@ -1,2 +1,3 @@
 # telescope
-Low level graphics for a simpler time
+
+Pixel-level graphics from a simpler time

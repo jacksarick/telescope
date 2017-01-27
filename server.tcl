@@ -27,7 +27,17 @@ proc user_data {sock} {
 	if {$line eq ""} return
 
 	# Interpret valid data
-	puts "$line"
+	command [split $line]
+}
+
+# User commands
+proc command {line} {
+	switch [lindex $line 0] {
+		set 
+
+		default {}
+	}
+	puts [join $line "-"]
 }
 
 # Send string to all users

@@ -11,8 +11,8 @@ pack [canvas .c] -fill both -expand 1
 
 # Pipe keyboard output to steam
 bind . <KeyPress> { send_data "key %A" }
-# bind . <ButtonPress> { send_data "click %b %x %y" }
-bind . <Motion> { send_data "mouse %x %y" }
+bind . <ButtonPress> { send_data "click %b %x %y" }
+# bind . <Motion> { send_data "mouse %x %y" }
 
 # Start Server
 set sock [socket -server connect 1234]

@@ -33,11 +33,14 @@ proc user_data {sock} {
 # User commands
 proc command {line} {
 	switch [lindex $line 0] {
-		set 
+		set {
+			puts "x: [lindex $line 1] y: [lindex $line 2] r: [lindex $line 3] g: [lindex $line 4] b: [lindex $line 5]"
+		}
 
-		default {}
+		default {
+			puts [join $line "-"]
+		}
 	}
-	puts [join $line "-"]
 }
 
 # Send string to all users

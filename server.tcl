@@ -1,5 +1,7 @@
 # Shoutout to rmax <http://wiki.tcl.tk/1003> for the base code
 
+puts [source "canvas.tcl"]
+
 # On connect
 proc connect {sock host port} {
 	# Buffer line
@@ -31,14 +33,15 @@ proc user_data {sock} {
 }
 
 # User commands
-proc command {line} {
-	switch [lindex $line 0] {
+proc command {input} {
+	switch [lindex $input 0] {
 		set {
-			puts "x: [lindex $line 1] y: [lindex $line 2] r: [lindex $line 3] g: [lindex $line 4] b: [lindex $line 5]"
+			# puts "x: [lindex $input 1] y: [lindex $input 2] r: [lindex $input 3] g: [lindex $input 4] b: [lindex $input 5]"
+			draw_pixel .c [lindex $input 1] [lindex $input 2] [lindex $input 3] [lindex $input 4] [lindex $input 5]
 		}
 
 		default {
-			puts [join $line "-"]
+			puts [join $input "-"]
 		}
 	}
 }

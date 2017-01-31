@@ -6,17 +6,15 @@ wm protocol . WM_DELETE_WINDOW {
 	exit
 }
 
-# Make canvas
-canvas .c -bg black
-pack .c -fill both -expand 1
-set ::img [image create photo -palette 256/256/256]
-.c create image 0 0 -image $::img
-
 # Load server
 puts [source "server.tcl"]
+puts [source "canvas.tcl"]
 
 # Start Server
 set server [socket -server connect 1234]
+
+# Bind resize event to image resize
+bind . <Configure> {img_size [winfo width %W] [winfo height %W]}
 
 # Pipe keyboard output to steam
 bind . <KeyPress> { send_data "keypress %A" }

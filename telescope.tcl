@@ -9,8 +9,8 @@ wm protocol . WM_DELETE_WINDOW {
 # Make canvas
 canvas .c -bg black
 pack .c -fill both -expand 1
-set img [image create photo -palette 256/256/256]
-# puts [.c cget -height]
+set ::img [image create photo -palette 256/256/25]
+.c create image 0 0 -image $::img
 
 # Load server
 puts [source "server.tcl"]

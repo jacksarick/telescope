@@ -1,7 +1,5 @@
 # Shoutout to rmax <http://wiki.tcl.tk/1003> for the base code
 
-source "canvas.tcl"
-
 # On connect
 proc connect {sock host port} {
 	# Buffer line

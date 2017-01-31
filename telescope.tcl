@@ -1,3 +1,4 @@
+#!/usr/bin/tclsh
 package require Tk
 
 # Bind close button to exit program
@@ -8,6 +9,7 @@ wm protocol . WM_DELETE_WINDOW {
 # Make canvas
 canvas .c -bg black
 pack .c -fill both -expand 1
+set img [image create photo -palette 256/256/256]
 # puts [.c cget -height]
 
 # Load server
